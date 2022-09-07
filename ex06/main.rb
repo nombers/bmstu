@@ -34,6 +34,9 @@ class Truck < Vehicle
 end
 
 class Motorcycle < Vehicle
+    def steer
+        puts "Turn front wheel."
+    end
 end
 
 truck = Truck.new
@@ -60,3 +63,6 @@ puts car_atrubut.instance_variables
 car_atrubut.odometr = 22914
 car_atrubut.gas_used = 728
 puts car_atrubut.instance_variables
+
+motorcycle = Motorcycle.new
+motorcycle.steer
