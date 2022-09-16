@@ -14,7 +14,7 @@ while true
     print "Введите команду: "
     command = gets.chomp
     if command == "1"
-        puts "На вашем балансе #{vash_balans} орехов."
+        puts "На вашем балансе #{vash_balans} грамм орехов."
     elsif command == "2"
         print "Вставьте купюру (5, 10, 50, 100): "
         d = gets.chomp
