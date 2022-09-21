@@ -30,7 +30,12 @@ if b == c
         arr3 += [lol]
         lol = []
     end
-    print arr3
+    for i in (0.. a - 1)
+        for j in (0..d - 1)
+            print "#{arr3[i][j]} "
+        end
+        print "\n"
+    end
 else
     puts "Перемножить матрицы нельзя!!!"
 end
