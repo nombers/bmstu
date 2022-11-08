@@ -9,6 +9,7 @@ class RecursComp
     def compileF
         compileC
         compileT
+        compileC
         return if @index >= @str.length
         cur = @str[@index].chr 
         if cur == '+' or cur == '-'
@@ -21,16 +22,19 @@ class RecursComp
     def compileT
         compileC
         compileM
+        compileC
         return if @index >= @str.length
         cur = @str[@index].chr
         if cur == '*' or cur == '/' or cur == '%'
             @index += 1
             compileC
             compileT
+            compileC
             print "#{cur} "
         end
     end
     def compileM
+        compileC
         return if @index >= @str.length
         if @str[@index].chr == '(' or @str[@index].chr == '[' or @str[@index].chr == '{'
             @index += 1
@@ -43,6 +47,7 @@ class RecursComp
         end
     end
     def compileV
+        compileC
         print "#{@str[@index].chr} "
         @index += 1
         compileC
