@@ -11,7 +11,6 @@ class RecursComp
     compileC
     compileT
     return if @index >= @str.length
-
     cur = @str[@index].chr
     if ['+', '-'].include?(cur)
       @index += 1
@@ -25,7 +24,6 @@ class RecursComp
     compileC
     compileM
     return if @index >= @str.length
-
     cur = @str[@index].chr
     if ['*', '/', '%'].include?(cur)
       @index += 1
@@ -37,7 +35,6 @@ class RecursComp
   def compileM
     compileC
     return if @index >= @str.length
-
     if ['(', '[', '{'].include?(@str[@index].chr)
       @index += 1
       compileF
