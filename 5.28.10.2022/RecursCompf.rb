@@ -51,16 +51,18 @@ class RecursComp
   end
 
   def complitP
+    return if @index >= @str.length
     @index += 1 if @str[@index] == ' '
   end
 
   def compileC
     complitP
-    if @index + 1 < @str.length && ['/*', '//'].include?(@str[@index] + @str[@index + 1])
-      @index += 1
-      @index += 1 until ['*/', '//'].include?(@str[@index] + @str[@index + 1])
+    if @index + 1 < @str.length && ['/*'].include?(@str[@index] + @str[@index + 1])
+      @index += 2
+      @index += 1 until ['*/'].include?(@str[@index] + @str[@index + 1])
       @index += 2
     end
+    @index += 1000 if @index + 1 < @str.length && @str[@index] + @str[@index + 1] == '//'
     complitP
   end
 end
